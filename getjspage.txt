@@ -1,0 +1,108 @@
+get.page({
+    head: [{
+        title: "GetJS Starter Boilerplate",
+    }],
+    body: [{
+        script: [{}]
+    }],
+    div: [
+        [
+            {attr: {id: "foot"}},
+            {
+                h1: [
+                    {attr: {id: "titleh1foot"} },
+                    {
+                        img: [
+                            [ {attr: {src: "https://getjs.firebaseapp.com/GetJSlogo.png", id: "logoer"}} ]
+                        ]
+                    },
+                    "GetJS",
+                ],
+            }
+        ],
+        [
+            {attr: {id: "h1aniup"}},
+            {
+                h1: [
+                    "GetJS Starter Boilerplate",
+                ],
+                p: [
+                    "To get started. Open the index.js to edit the page code"
+                ]
+            }
+        ]
+    ],
+    style: {
+        "img#logoer": {
+            margin: "0px",
+            padding: "0px",
+            width: "80px",
+            height: "80px",
+            position: "fixed",
+            top: "5px",
+            left: "5px",
+        },
+        body: {
+            background: "rgba(33,33,33,1)",
+            color: "rgba(222, 222, 222, 1)",
+            margin: 0,
+            padding: 0,
+            "font-family": "sans-serif"
+        },
+        "#h1aniup": {
+            animation: "fiu 1s ease-out",
+            display: "flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "text-align": "center",
+            "flex-direction": "column",
+            height: "97vh",
+            width: "97vw"
+        },
+        "@keyframes fiu": {
+            from: {
+                opacity: 0,
+                transform: "translateY(20px)",
+            },
+            to: {
+                opacity: 1,
+                transform: "translateY(0)",
+            }
+        },
+        "#foot": {
+            background: "rgba(55,55,55,1)",
+            "z-index": "99",
+            position: "fixed",
+            width: "100vw",
+            padding: "10px",
+        },
+        "#titleh1foot": {
+            position: "relative",
+            left: "100px"
+        },
+    }
+});
+
+(function() {
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    async function runTimer() {
+      console.log();
+      await sleep(1000);
+      console.clear();
+    }
+
+    runTimer();
+})();
+
+(function() {
+    let link = document.querySelector("link[rel*='icon']");
+    
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    
+    link.href = 'https://getjs.firebaseapp.com/GetJSlogo.png';
+})();
